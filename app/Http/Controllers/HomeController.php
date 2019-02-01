@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Billing;
+use Faker\Generator as Faker;
 
 class HomeController extends Controller
 {
@@ -30,9 +31,10 @@ class HomeController extends Controller
     {
         return view('billing-information');
     }
-     public function  payment_store(Request $request){
+     public function  payment_store(Request $request,Faker $faker){
         $username=$request->username;
         $amount=$request->amount;
+        $payment_id=$faker->unique()->numberBetween($min = 10000, $max = 90000);
         $payment_method=$request->payment_method;
         $payment_date=$request->payment_date;
 
@@ -40,6 +42,7 @@ class HomeController extends Controller
 
         $obj->username=$username;
         $obj->amount=$amount;
+         $obj->payment_id=$payment_id;
         $obj->payment_method=$payment_method;
         $obj->payment_date=$payment_date;
         if($obj->save()){

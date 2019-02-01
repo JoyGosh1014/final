@@ -17,7 +17,8 @@ class CreateBillingsTable extends Migration
             $table->increments('id');
             $table->String('username');
             $table->bigInteger('amount');
-             $table->String('payment_method');
+            $table->String('payment_method');
+            $table->Integer('payment_id');
             $table->date('payment_date');
             $table->timestamps();
         });

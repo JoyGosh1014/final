@@ -20,9 +20,6 @@
             <label for="payment-method" class="col-sm-2 col-form-label">Payment Method</label>
                  <div class="col-sm-10">
                     <select id="payment-method" name="payment_method" required>
-                        <option 
-                            value=" ">Payment Method
-                        </option>
                         <option
                             value="Bkash">Bkash</option>
                         <option
