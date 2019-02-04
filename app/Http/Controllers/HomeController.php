@@ -37,6 +37,7 @@ class HomeController extends Controller
         $payment_id=$faker->unique()->numberBetween($min = 10000, $max = 90000);
         $payment_method=$request->payment_method;
         $payment_date=$request->payment_date;
+    
 
         $obj=new Billing();
 
@@ -49,5 +50,14 @@ class HomeController extends Controller
            echo "Save Successfully";
         }
 
+    }
+    public function admin()
+    {
+       return view('adminhome');
+    }
+    public function bill_list(){
+        $information=Billing::all();
+        return view('bill-list',['data'=>$information]);
+        
     }
 }

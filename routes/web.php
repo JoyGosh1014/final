@@ -20,3 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/billing_information', 'HomeController@billing_information');
 Route::post('/payment_store','HomeController@payment_store');
+Route::get('/adminhome','HomeController@admin');
+Route::get('/bill_list','HomeController@bill_list');

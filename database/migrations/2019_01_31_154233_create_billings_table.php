@@ -20,6 +20,7 @@ class CreateBillingsTable extends Migration
             $table->String('payment_method');
             $table->Integer('payment_id');
             $table->date('payment_date');
+            $table->String('status')->default('paid');
             $table->timestamps();
         });
     }
